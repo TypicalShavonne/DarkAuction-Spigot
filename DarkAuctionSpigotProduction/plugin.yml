@@ -1,0 +1,18 @@
+name: DarkAuction
+main: mc.alessandroch.darkauction.DarkAuction
+version: 1.3.3_1beta
+description: DarkAuction system similar to hypixel auction
+author: AlessandroCH
+depend: []
+softdepend: [Vault,HolographicDisplays,DecentHolograms]
+api-version: 1.16
+commands:
+     darkauction:
+        description: Admin command for manage the plugin
+        permission: darkauction.darkauction
+     openauction:
+        description: Command for open the auction
+        permission: darkauction.openauction
+
+     
+     
