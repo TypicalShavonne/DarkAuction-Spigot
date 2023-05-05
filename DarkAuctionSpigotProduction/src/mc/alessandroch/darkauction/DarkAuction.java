@@ -70,7 +70,7 @@ public class DarkAuction extends JavaPlugin implements Listener{
 	public int time = 60*60; //seconds*minutes
 	public int initialCost = 2000;
 	public ItemSender itemSender;
-	public String version = "beta1.3.3_1";
+	public String version = "beta1.3.3_2";
 	public String apiversion = "v??";
 	public String materialname = "";
 	public UpdateChecker updater;
@@ -88,7 +88,7 @@ public class DarkAuction extends JavaPlugin implements Listener{
 	public void onDisable() {
 		if(hologramAPI == null) return;
 		for(Player plr : getServer().getOnlinePlayers()) {
-			if(loc != null && isStarted == true)itemSender.removeItem(plr, currentlyItem, loc);
+			itemSender.removeItem(plr, currentlyItem, loc);
 		}
 		save();
 	}

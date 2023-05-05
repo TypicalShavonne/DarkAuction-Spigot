@@ -1,6 +1,6 @@
 name: DarkAuction
 main: mc.alessandroch.darkauction.DarkAuction
-version: 1.3.3_1beta
+version: 1.3.3_2beta
 description: DarkAuction system similar to hypixel auction
 author: AlessandroCH
 depend: []
