@@ -111,10 +111,7 @@ public class GuiManager {
                 try {
                     if (DarkAuction.get().allItems.size() >= i + count * page) {
                         ItemStack is = DarkAuction.get().allItems.get(i + count * page);
-					/*ItemMeta meta = is.getItemMeta();
-					NamespacedKey pos = new NamespacedKey(DarkAuction.get(), "position");
-					meta.getCustomTagContainer().setCustomTag(pos, ItemTagType.INTEGER,i+count*page);
-					is.setItemMeta(meta);	*/
+					
                         inv.setItem(i, is);
 
 
@@ -146,10 +143,7 @@ public class GuiManager {
                 try {
                     if (DarkAuction.get().allItems.size() >= i + count * page) {
                         ItemStack is = DarkAuction.get().allItems.get(i + count * page);
-					/*ItemMeta meta = is.getItemMeta();
-					NamespacedKey pos = new NamespacedKey(DarkAuction.get(), "position");
-					meta.getCustomTagContainer().setCustomTag(pos, ItemTagType.INTEGER,i+count*page);
-					is.setItemMeta(meta);	*/
+					
                         inv.setItem(i, is);
 
 

@@ -759,50 +759,7 @@ public class DarkAuction extends JavaPlugin implements Listener {
         return null;
     }
 
-    /*public void updateHologram()
-    {
-         int p1 = time % 60;
-            int p2 = time / 60;
-            int p3 = p2 % 60;
-            p2 = p2 / 60;
-            //System.out.print( p2 + ":" + p3 + ":" + p1);
-            if(loc == null) return;
-        if(hologram == null)hologram = HologramsAPI.createHologram(this, loc.clone().add(new Location(loc.getWorld(),0,1.3,0)));
-        hologram.teleport(loc.clone().add(new Location(loc.getWorld(),0,0.75,0)));
-        VisibilityManager visibilityManager = hologram.getVisibilityManager();
-        hologram.clearLines();
-        if(isStarted) {
-            hologram.appendTextLine("§b"+getName(currentlyItem));
-            if(offers.size() < 1) {
-                hologram.appendTextLine(getString("MESSAGES.initialOffer-hologram-msg")+" §a"+initialCost+getString("MESSAGES.currencysymbol"));
-            }else {
-                Offer offer = getHigherOffer();
-                hologram.appendTextLine(getString("MESSAGES.currentOffer-hologram-msg")+" §a"+offer.offer+getString("MESSAGES.currencysymbol"));
-                hologram.appendTextLine("§6"+offer.playername);
-
-            }
-            hologram.appendTextLine(getString("MESSAGES.dark-auction-endin")+" §e"+p2 + "h " + p3 + "m " + p1+"s");
-            hologram.appendTextLine("§e"+getString("MESSAGES.method-for-see-theitem-hologram-msg"));
-
-        }else {
-
-            hologram.appendTextLine(getString("MESSAGES.auctionstarts-in-hologram-msg")+" §e"+p2 + "h " + p3 + "m " + p1+"s");
-        }
-
-        for(Player plr : getServer().getOnlinePlayers())
-            {
-
-             visibilityManager.resetVisibility(plr);
-
-
-                    visibilityManager.showTo(plr);
-
-
-
-            }
-        visibilityManager.setVisibleByDefault(false);
-
-    }*/
+    
     public void updateHologram() {
         NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
         int p1 = time % 60;
@@ -844,18 +801,7 @@ public class DarkAuction extends JavaPlugin implements Listener {
 
         }
 
-		/*for(Player plr : getServer().getOnlinePlayers())
-	        {
-
-			 visibilityManager.resetVisibility(plr);
-
-
-		        	visibilityManager.showTo(plr);
-
-
-
-	        }
-		visibilityManager.setVisibleByDefault(false);*/
+		
 
     }
 

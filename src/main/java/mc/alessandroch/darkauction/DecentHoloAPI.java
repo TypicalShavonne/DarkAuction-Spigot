@@ -46,10 +46,7 @@ public class DecentHoloAPI extends HologramAPI {
     @Override
     public void clearLines() {
         strings.clear();
-		/*if(hologram.getPage(0).getLines().size() < 1) return;
-		for(int i=0; i < hologram.getPage(0).getLines().size(); i++) {
-			DHAPI.removeHologramLine(hologram, 0);
-		}*/
+		
 
 
     }
