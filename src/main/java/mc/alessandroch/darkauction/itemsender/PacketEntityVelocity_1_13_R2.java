@@ -37,6 +37,6 @@ public class PacketEntityVelocity_1_13_R2 extends PacketPlayOutEntityVelocity {
 
 
     public String b() {
-        return String.format("id=%d, x=%.2f, y=%.2f, z=%.2f", new Object[] { Integer.valueOf(this.id), Float.valueOf((float) this.x / 8000.0F), Float.valueOf((float) this.y / 8000.0F), Float.valueOf((float) this.z / 8000.0F)});
+        return String.format("id=%d, x=%.2f, y=%.2f, z=%.2f", Integer.valueOf(this.id), Float.valueOf((float) this.x / 8000.0F), Float.valueOf((float) this.y / 8000.0F), Float.valueOf((float) this.z / 8000.0F));
     }
 }

@@ -47,7 +47,7 @@ public class ItemEco {
 	//	Inventory inv = player.getInventory();
 
 		if(stack != null) {
-			if(stack.getType().equals(mat)) return true;
+			return stack.getType().equals(mat);
 			
 		}
 		return false;

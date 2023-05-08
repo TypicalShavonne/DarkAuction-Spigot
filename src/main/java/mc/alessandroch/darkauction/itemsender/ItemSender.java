@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
 public interface ItemSender {
 
 	
-	public void createItm(ItemStack item,Location loc);
+	void createItm(ItemStack item,Location loc);
 	
-	public void sendItem(Player player, ItemStack item,Location loc);
+	void sendItem(Player player, ItemStack item,Location loc);
     
 
-	public void removeItem(Player player, ItemStack currentlyItem, Location loc);
+	void removeItem(Player player, ItemStack currentlyItem, Location loc);
 }

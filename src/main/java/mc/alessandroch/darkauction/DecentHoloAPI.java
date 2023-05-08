@@ -16,7 +16,7 @@ import eu.decentsoftware.holograms.api.holograms.Hologram;
 
 public class DecentHoloAPI extends HologramAPI {
 	private Hologram hologram;
-	private List<String> strings = new ArrayList<String>();
+	private final List<String> strings = new ArrayList<String>();
     Location loc = null;
 	@Override
 	public void start() {

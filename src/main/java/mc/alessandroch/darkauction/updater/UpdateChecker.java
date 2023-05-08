@@ -12,9 +12,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import mc.alessandroch.darkauction.DarkAuction;
 
- 
 public class UpdateChecker {
 DarkAuction plugin;
 public UpdateChecker(DarkAuction plugin) {
@@ -22,9 +20,9 @@ this.plugin = plugin;
 currentVersion = plugin.version;
 }
  
-private String currentVersion;
-private String readurl = "https://raw.githubusercontent.com/AlessandroCH2/DarkAuction-plugin/main/version.txt";
-private String readurl2 = "https://raw.githubusercontent.com/AlessandroCH2/DarkAuction-plugin/main/supportedminecraftversions.txt";
+private final String currentVersion;
+private final String readurl = "https://raw.githubusercontent.com/AlessandroCH2/DarkAuction-plugin/main/version.txt";
+private final String readurl2 = "https://raw.githubusercontent.com/AlessandroCH2/DarkAuction-plugin/main/supportedminecraftversions.txt";
 
 public void startUpdateCheck(Player plr2) {
 
@@ -62,9 +60,9 @@ public void startUpdateCheck(Player plr2) {
 	    			if(plr.hasPermission("darkauction.updatechecker")) {
 	    				
 	    				if(isSupported) {
-	    					plr.sendMessage("DarkAuction §e"+line+" §fhas been released! Get it on §ehttps://www.spigotmc.org/resources/96643");
+	    					plr.sendMessage("DarkAuction ï¿½e"+line+" ï¿½fhas been released! Get it on ï¿½ehttps://www.spigotmc.org/resources/96643");
 	    		    		}else {
-	    		    			plr.sendMessage("DarkAuction §e"+line+"§f has been released! §cBut not support this minecraft version anymore");
+	    		    			plr.sendMessage("DarkAuction ï¿½e"+line+"ï¿½f has been released! ï¿½cBut not support this minecraft version anymore");
 	    		    			
 	    		    		}
 	    			}
@@ -73,9 +71,9 @@ public void startUpdateCheck(Player plr2) {
 	    		}else {
 	    	        if(plr2.hasPermission("darkauction.updatechecker")) {
 	    	        	if(isSupported) {
-	    					plr2.sendMessage("DarkAuction §e"+line+" §fhas been released! Get it on §ehttps://www.spigotmc.org/resources/96643");
+	    					plr2.sendMessage("DarkAuction ï¿½e"+line+" ï¿½fhas been released! Get it on ï¿½ehttps://www.spigotmc.org/resources/96643");
 	    		    		}else {
-	    		    			plr2.sendMessage("DarkAuction §e"+line+"§f has been released! §cBut not support this minecraft version anymore");
+	    		    			plr2.sendMessage("DarkAuction ï¿½e"+line+"ï¿½f has been released! ï¿½cBut not support this minecraft version anymore");
 	    		    			
 	    		    		}
 	    			}
@@ -86,12 +84,12 @@ public void startUpdateCheck(Player plr2) {
 	    			
 	    			for(Player plr :plugin.getServer().getOnlinePlayers()) {
 	    				if(plr.hasPermission("darkauction.updatechecker")) {
-	    					plr.sendMessage("§aYour version of DarkAuction is currently up to date");
+	    					plr.sendMessage("ï¿½aYour version of DarkAuction is currently up to date");
 	    				}
 	    			}
 	    			}else {
 	    		        if(plr2.hasPermission("darkauction.updatechecker")) {
-	    		        	plr2.sendMessage("§aYour version of DarkAuction is currently up to date");
+	    		        	plr2.sendMessage("ï¿½aYour version of DarkAuction is currently up to date");
 	    				}
 	    			}
 	    	}
@@ -119,8 +117,7 @@ protected boolean checkSupported(List<String> supportedversions) {
         } catch (ArrayIndexOutOfBoundsException whatVersionAreYouUsingException) {
             return false;
         }
-        if(supportedversions.contains(version)) return true;
-	return false;
+	return supportedversions.contains(version);
 }
 
 
@@ -144,13 +141,7 @@ public boolean updateCheckNewAvailable() {
 	    	
 	    	while ((str = br.readLine()) != null) {
 	    	String line = str;
-	    	if(!line.equals(currentVersion)) {
-	    		return true;
-	    		
-	    	}else {
-	    		return false;
-	    		
-	    	}
+				return !line.equals(currentVersion);
 	    	}
 
 	    	br.close();

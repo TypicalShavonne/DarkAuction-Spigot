@@ -3,7 +3,6 @@ package mc.alessandroch.darkauction.api;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import mc.alessandroch.darkauction.DarkAuction;
 import mc.alessandroch.darkauction.HologramAPI;
 import mc.alessandroch.darkauction.Offer;
 import mc.alessandroch.darkauction.gui.GuiManager;

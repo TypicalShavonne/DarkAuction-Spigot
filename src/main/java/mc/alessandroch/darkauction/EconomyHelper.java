@@ -53,15 +53,11 @@ public class EconomyHelper {
 
 	public static boolean isOlder(String vault) {
 
-		if(vault.equals("1.6.7")
+		return vault.equals("1.6.7")
 				||
 				vault.equals("1.6.6")
 				||
-				vault.equals("1.5.5")
-				) {
-			return true;
-		}
-		return false;
+				vault.equals("1.5.5");
 	}
 
 	public static void addMoney(String name, double money) {

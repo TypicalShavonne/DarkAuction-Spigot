@@ -8,18 +8,13 @@ import org.bukkit.event.HandlerList;
 
 import mc.alessandroch.darkauction.Offer;
 
-public class AuctionEndEvent extends Event implements Cancellable {
-    private Player playerWon;
-    private Offer playerOffer;
+public class ModifyOfferEvent extends Event implements Cancellable {
     
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private boolean isCancelled;
-
-    public AuctionEndEvent(Offer offer){
-        this.playerOffer = offer;
-        if(offer != null)
-        this.playerWon = Bukkit.getServer().getPlayer(offer.playername);
-        
+    private final Offer offer;
+    public ModifyOfferEvent(Offer offer){
+       this.offer = offer;
         this.isCancelled = false;
     }
 
@@ -27,7 +22,12 @@ public class AuctionEndEvent extends Event implements Cancellable {
     public boolean isCancelled() {
         return isCancelled;
     }
-
+     public Offer getOffer() {
+    	 return offer;
+     }
+     public Player getPlayer() {
+    	 return Bukkit.getPlayer(offer.playername);
+     }
     @Override
     public void setCancelled(boolean cancelled) {
         this.isCancelled = cancelled;
@@ -41,14 +41,4 @@ public class AuctionEndEvent extends Event implements Cancellable {
     public static HandlerList getHandlerList() {
         return HANDLERS_LIST;
     }
-
-    public Player getPlayerWon() {
-        return playerWon;
-    }
-
-    public Offer getOffer() {
-    	return playerOffer;
-    }
 }
-
-

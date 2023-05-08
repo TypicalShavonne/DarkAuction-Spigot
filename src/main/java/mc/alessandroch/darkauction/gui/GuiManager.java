@@ -11,11 +11,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.tags.ItemTagType;
 
 
-
-import mc.alessandroch.darkauction.DarkAuction;
 import mc.alessandroch.darkauction.api.DarkAuctionAPI;
 
 
@@ -35,24 +32,24 @@ public class GuiManager {
 		Inventory inv = Bukkit.createInventory(null, 9, "DarkAuction [Menu]");
 		Bukkit.getScheduler().runTaskAsynchronously(DarkAuction.get(), () -> {
 		
-		inv.setItem(0, createGuiItem(Material.PAPER,"§eItem list","§7Open Item list page"));
-		inv.setItem(1, createGuiItem(Material.LIME_DYE,"§eAdd new item","§7Add a new item into the","§7list by pressing an item","§7in your inventory"));
-		inv.setItem(2, createGuiItem(Material.BARRIER,"§cRemove an item","§7Remove the item","§7you click in the list"));
-		inv.setItem(3, createGuiItem(Material.ARROW,"§eGive an item","§7Give the item","§7you click in the list"));
-		inv.setItem(4, createGuiItem(Material.OAK_SLAB,"§eSet location","§7Set the location","§7of the hologram"));
-		inv.setItem(5, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
-		inv.setItem(6, createGuiItem(Material.GREEN_DYE,"§aForce start","§7Force start the","§7auction"));
-		inv.setItem(7, createGuiItem(Material.RED_DYE,"§cForce stop","§7Force stop the","§7auction"));
-		inv.setItem(8, createGuiItem(Material.OAK_SIGN,"§eInformations","§7Plugin version: "+checkVersion(),"§7Server version: §e"+Bukkit.getVersion(),"§7API version: §e"+DarkAuction.get().apiversion));
+		inv.setItem(0, createGuiItem(Material.PAPER,"ï¿½eItem list","ï¿½7Open Item list page"));
+		inv.setItem(1, createGuiItem(Material.LIME_DYE,"ï¿½eAdd new item","ï¿½7Add a new item into the","ï¿½7list by pressing an item","ï¿½7in your inventory"));
+		inv.setItem(2, createGuiItem(Material.BARRIER,"ï¿½cRemove an item","ï¿½7Remove the item","ï¿½7you click in the list"));
+		inv.setItem(3, createGuiItem(Material.ARROW,"ï¿½eGive an item","ï¿½7Give the item","ï¿½7you click in the list"));
+		inv.setItem(4, createGuiItem(Material.OAK_SLAB,"ï¿½eSet location","ï¿½7Set the location","ï¿½7of the hologram"));
+		inv.setItem(5, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
+		inv.setItem(6, createGuiItem(Material.GREEN_DYE,"ï¿½aForce start","ï¿½7Force start the","ï¿½7auction"));
+		inv.setItem(7, createGuiItem(Material.RED_DYE,"ï¿½cForce stop","ï¿½7Force stop the","ï¿½7auction"));
+		inv.setItem(8, createGuiItem(Material.OAK_SIGN,"ï¿½eInformations","ï¿½7Plugin version: "+checkVersion(),"ï¿½7Server version: ï¿½e"+Bukkit.getVersion(),"ï¿½7API version: ï¿½e"+DarkAuction.get().apiversion));
 		});
 		player.openInventory(inv);
 	}
 	private String checkVersion() {
 		
 		if(DarkAuction.get().updater.updateCheckNewAvailable()) {
-			return "§c"+DarkAuction.get().version+"§e§l NEW UPDATE AVAILABLE";
+			return "ï¿½c"+DarkAuction.get().version+"ï¿½eï¿½l NEW UPDATE AVAILABLE";
 		}else {
-			return "§a"+DarkAuction.get().version+"";
+			return "ï¿½a"+DarkAuction.get().version+"";
 		}
 
 	}
@@ -60,8 +57,8 @@ public class GuiManager {
 		Inventory inv = Bukkit.createInventory(null, 9, "DarkAuction [Menu->Add item]");
 		Bukkit.getScheduler().runTaskAsynchronously(DarkAuction.get(), () -> {
 		
-		inv.setItem(0, createGuiItem(Material.BARRIER,"§cBack"));
-		inv.setItem(1, createGuiItem(Material.LIME_DYE,"§eAdd an item","§7Add an item by pressing","§7it in your inventory"));
+		inv.setItem(0, createGuiItem(Material.BARRIER,"ï¿½cBack"));
+		inv.setItem(1, createGuiItem(Material.LIME_DYE,"ï¿½eAdd an item","ï¿½7Add an item by pressing","ï¿½7it in your inventory"));
 		
 		
 		});
@@ -71,10 +68,10 @@ public class GuiManager {
 		Inventory inv = Bukkit.createInventory(null, 9*3, "DarkAuction [Menu->Item List]");
 		Bukkit.getScheduler().runTaskAsynchronously(DarkAuction.get(), () -> {
 		
-		inv.setItem(getLoc(0,2), createGuiItem(Material.PAPER,"§ePage back"));
-		inv.setItem(getLoc(4,2), createGuiItem(Material.LIME_DYE,"§ePage number",""+p));
-		inv.setItem(getLoc(5,2), createGuiItem(Material.BARRIER,"§cBack"));
-		inv.setItem(getLoc(8,2), createGuiItem(Material.PAPER,"§ePage forward"));
+		inv.setItem(getLoc(0,2), createGuiItem(Material.PAPER,"ï¿½ePage back"));
+		inv.setItem(getLoc(4,2), createGuiItem(Material.LIME_DYE,"ï¿½ePage number",""+p));
+		inv.setItem(getLoc(5,2), createGuiItem(Material.BARRIER,"ï¿½cBack"));
+		inv.setItem(getLoc(8,2), createGuiItem(Material.PAPER,"ï¿½ePage forward"));
 		
 		
 		int page = p-1;
@@ -89,10 +86,10 @@ public class GuiManager {
 					
 					
 				}else {
-					inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
+					inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
 				}
 			}catch (Exception e){
-				inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
+				inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
 			}
 			
 		}
@@ -103,10 +100,10 @@ public class GuiManager {
 		Inventory inv = Bukkit.createInventory(null, 9*3, "DarkAuction [Menu->Delete item List]");
 		Bukkit.getScheduler().runTaskAsynchronously(DarkAuction.get(), () -> {
 		
-		inv.setItem(getLoc(0,2), createGuiItem(Material.PAPER,"§ePage back"));
-		inv.setItem(getLoc(4,2), createGuiItem(Material.LIME_DYE,"§ePage number",""+p));
-		inv.setItem(getLoc(5,2), createGuiItem(Material.BARRIER,"§cBack"));
-		inv.setItem(getLoc(8,2), createGuiItem(Material.PAPER,"§ePage forward"));
+		inv.setItem(getLoc(0,2), createGuiItem(Material.PAPER,"ï¿½ePage back"));
+		inv.setItem(getLoc(4,2), createGuiItem(Material.LIME_DYE,"ï¿½ePage number",""+p));
+		inv.setItem(getLoc(5,2), createGuiItem(Material.BARRIER,"ï¿½cBack"));
+		inv.setItem(getLoc(8,2), createGuiItem(Material.PAPER,"ï¿½ePage forward"));
 		
 		
 		int page = p-1;
@@ -124,10 +121,10 @@ public class GuiManager {
 					
 					
 				}else {
-					inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
+					inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
 				}
 			}catch (Exception e){
-				inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
+				inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
 			}
 			
 		}
@@ -138,10 +135,10 @@ public class GuiManager {
 		Inventory inv = Bukkit.createInventory(null, 9*3, "DarkAuction [Menu->Give item List]");
 		Bukkit.getScheduler().runTaskAsynchronously(DarkAuction.get(), () -> {
 		
-		inv.setItem(getLoc(0,2), createGuiItem(Material.PAPER,"§ePage back"));
-		inv.setItem(getLoc(4,2), createGuiItem(Material.LIME_DYE,"§ePage number",""+p));
-		inv.setItem(getLoc(5,2), createGuiItem(Material.BARRIER,"§cBack"));
-		inv.setItem(getLoc(8,2), createGuiItem(Material.PAPER,"§ePage forward"));
+		inv.setItem(getLoc(0,2), createGuiItem(Material.PAPER,"ï¿½ePage back"));
+		inv.setItem(getLoc(4,2), createGuiItem(Material.LIME_DYE,"ï¿½ePage number",""+p));
+		inv.setItem(getLoc(5,2), createGuiItem(Material.BARRIER,"ï¿½cBack"));
+		inv.setItem(getLoc(8,2), createGuiItem(Material.PAPER,"ï¿½ePage forward"));
 		
 		
 		int page = p-1;
@@ -159,10 +156,10 @@ public class GuiManager {
 					
 					
 				}else {
-					inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
+					inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
 				}
 			}catch (Exception e){
-				inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"§7"));
+				inv.setItem(i, createGuiItem(Material.BLACK_STAINED_GLASS_PANE,"ï¿½7"));
 			}
 			
 		}
@@ -172,15 +169,10 @@ public class GuiManager {
 	public boolean checkPageAvailable(int pg,boolean forward) {
 		if(forward) {
 			int pgg = pg-1;
-			if(DarkAuction.get().allItems.size() > ((9*2)*pgg)){
-				return true;
-			}
+			return DarkAuction.get().allItems.size() > ((9 * 2) * pgg);
 		}else {
-			if(pg > 1){
-				return true;
-			}
+			return pg > 1;
 		}
-		return false;
 	}
 	public int getLoc(int x, int y) {
 		return (9*y)+x;
@@ -192,108 +184,108 @@ public class GuiManager {
 	public void guiClick(String guiname,Player player, ItemStack item,Inventory inv) {
 		String itemname = item.getItemMeta().getDisplayName();
 		if(guiname.equals("DarkAuction [Menu]")) {
-			if(itemname.equals("§eItem list")) {
+			if(itemname.equals("ï¿½eItem list")) {
 				openListGui(player,1);
 			}
-			if(itemname.equals("§eAdd new item")) {
+			if(itemname.equals("ï¿½eAdd new item")) {
 				openAddGui(player);
 			}
-			if(itemname.equals("§cRemove an item")) {
+			if(itemname.equals("ï¿½cRemove an item")) {
 				openDeleteListGui(player,1);
 			}
-			if(itemname.equals("§eGive an item")) {
+			if(itemname.equals("ï¿½eGive an item")) {
 				openGiveListGui(player,1);
 			}
-			if(itemname.equals("§eSet location")) {
-				player.sendMessage("§eLocation changed correctly in your position!");
+			if(itemname.equals("ï¿½eSet location")) {
+				player.sendMessage("ï¿½eLocation changed correctly in your position!");
 				DarkAuction.get().loc = player.getLocation().clone();
 			}
-			if(itemname.equals("§aForce start")) {
+			if(itemname.equals("ï¿½aForce start")) {
 				player.closeInventory();
 				if(!DarkAuction.get().isStarted)DarkAuctionAPI.startAuction();
 			}
-			if(itemname.equals("§cForce stop")) {
+			if(itemname.equals("ï¿½cForce stop")) {
 				player.closeInventory();
 				if(DarkAuction.get().isStarted)DarkAuctionAPI.stopAuction();
 			}
 			
 		}else if(guiname.equals("DarkAuction [Menu->Item List]")) {
-			if(itemname.equals("§cBack")) {
+			if(itemname.equals("ï¿½cBack")) {
 				openMainGui(player);
 			}
-			if(itemname.equals("§ePage back")) {
+			if(itemname.equals("ï¿½ePage back")) {
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				if(checkPageAvailable(pagenumber,false)) {
 					openListGui(player,pagenumber-1);
 				}
 			}
-			if(itemname.equals("§ePage forward")) {
+			if(itemname.equals("ï¿½ePage forward")) {
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				if(checkPageAvailable(pagenumber+1,true)) {
 					openListGui(player,pagenumber+1);
 				}
 			}
 		}else if(guiname.equals("DarkAuction [Menu->Add item]")) {
-			if(itemname.equals("§cBack")) {
+			if(itemname.equals("ï¿½cBack")) {
 				openMainGui(player);
-			}else if(itemname.equals("§eAdd an item")) {
+			}else if(itemname.equals("ï¿½eAdd an item")) {
 				
 			}else {
 				DarkAuction.get().allItems.add(item);
-				player.sendMessage("§aItem added correctly!");
+				player.sendMessage("ï¿½aItem added correctly!");
 			    openListGui(player,1);
 			}
 			
 		}else if(guiname.equals("DarkAuction [Menu->Delete item List]")) {
-			if(itemname.equals("§cBack")) {
+			if(itemname.equals("ï¿½cBack")) {
 				openMainGui(player);
-			}else if(itemname.equals("§ePage back")) {
+			}else if(itemname.equals("ï¿½ePage back")) {
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				if(checkPageAvailable(pagenumber,false)) {
 					openDeleteListGui(player,pagenumber-1);
 				}
 			}else
-			if(itemname.equals("§ePage forward")) {
+			if(itemname.equals("ï¿½ePage forward")) {
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				if(checkPageAvailable(pagenumber+1,true)) {
 					openDeleteListGui(player,pagenumber+1);
 				}
-			}else if(itemname.equals("§ePage number")){
+			}else if(itemname.equals("ï¿½ePage number")){
 				
-			}else if(itemname.equals("§7")){
+			}else if(itemname.equals("ï¿½7")){
 				
 			}else {
 				ItemMeta meta = item.getItemMeta();
 				NamespacedKey pos = new NamespacedKey(DarkAuction.get(), "position");
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				DarkAuction.get().allItems.remove(item) ;
-				player.sendMessage("§cItem removed!");
+				player.sendMessage("ï¿½cItem removed!");
 				openDeleteListGui(player,pagenumber);
 			}
 		}else if(guiname.equals("DarkAuction [Menu->Give item List]")) {
-			if(itemname.equals("§cBack")) {
+			if(itemname.equals("ï¿½cBack")) {
 				openMainGui(player);
-			}else if(itemname.equals("§ePage back")) {
+			}else if(itemname.equals("ï¿½ePage back")) {
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				if(checkPageAvailable(pagenumber,false)) {
 					openGiveListGui(player,pagenumber-1);
 				}
 			}else
-			if(itemname.equals("§ePage forward")) {
+			if(itemname.equals("ï¿½ePage forward")) {
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				if(checkPageAvailable(pagenumber+1,true)) {
 					openGiveListGui(player,pagenumber+1);
 				}
-			}else if(itemname.equals("§ePage number")){
+			}else if(itemname.equals("ï¿½ePage number")){
 				
-			}else if(itemname.equals("§7")){
+			}else if(itemname.equals("ï¿½7")){
 				
 			}else {
 				ItemMeta meta = item.getItemMeta();
 				NamespacedKey pos = new NamespacedKey(DarkAuction.get(), "position");
 				int pagenumber = Integer.parseInt(inv.getItem(getLoc(4,2)).getItemMeta().getLore().get(0));
 				player.getInventory().addItem(item);
-				player.sendMessage("§aItem gived!");
+				player.sendMessage("ï¿½aItem gived!");
 				openGiveListGui(player,pagenumber);
 			}
 		}
