@@ -11,15 +11,15 @@ import mc.alessandroch.darkauction.Offer;
 public class AuctionEndEvent extends Event implements Cancellable {
     private Player playerWon;
     private final Offer playerOffer;
-    
+
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private boolean isCancelled;
 
-    public AuctionEndEvent(Offer offer){
+    public AuctionEndEvent(Offer offer) {
         this.playerOffer = offer;
-        if(offer != null)
-        this.playerWon = Bukkit.getServer().getPlayer(offer.playername);
-        
+        if (offer != null)
+            this.playerWon = Bukkit.getServer().getPlayer(offer.playername);
+
         this.isCancelled = false;
     }
 
@@ -47,7 +47,7 @@ public class AuctionEndEvent extends Event implements Cancellable {
     }
 
     public Offer getOffer() {
-    	return playerOffer;
+        return playerOffer;
     }
 }
 

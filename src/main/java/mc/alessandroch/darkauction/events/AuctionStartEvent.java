@@ -6,14 +6,13 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 
-
 public class AuctionStartEvent extends Event implements Cancellable {
-    
+
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private boolean isCancelled;
 
-    public AuctionStartEvent(){
-       
+    public AuctionStartEvent() {
+
         this.isCancelled = false;
     }
 

@@ -12,55 +12,54 @@ import eu.decentsoftware.holograms.api.DecentHologramsAPI;
 import eu.decentsoftware.holograms.api.holograms.Hologram;
 
 
-
-
 public class DecentHoloAPI extends HologramAPI {
-	private Hologram hologram;
-	private final List<String> strings = new ArrayList<String>();
+    private Hologram hologram;
+    private final List<String> strings = new ArrayList<String>();
     Location loc = null;
-	@Override
-	public void start() {
-		hologram = DecentHologramsAPI.get().getHologramManager().getHologram("darkauction-holo");
-		
-		if(hologram == null) { hologram = DHAPI.createHologram("darkauction-holo", new Location(Bukkit.getWorld("world"),0,1.3,0));
-		//hologram = HologramsAPI.createHologram((Plugin)DarkAuction.get(), );
-		//hologram.addPage();
-		DecentHologramsAPI.get().getHologramManager().registerHologram(hologram);
-		hologram.enable();
-		}
-	}
-	
-	
-	@Override
-	public void teleport(Location add) {
-		DecentHologramsAPI.get().getHologramManager().registerHologram(hologram);
-		hologram.enable();
-		loc = add.clone();
-		
-		DHAPI.moveHologram(hologram,add);
-		DHAPI.setHologramLines(hologram, strings);
-	    
-		
-	
-	}
-	
-	@Override
-	public void clearLines() {
-		strings.clear();
+
+    @Override
+    public void start() {
+        hologram = DecentHologramsAPI.get().getHologramManager().getHologram("darkauction-holo");
+
+        if (hologram == null) {
+            hologram = DHAPI.createHologram("darkauction-holo", new Location(Bukkit.getWorld("world"), 0, 1.3, 0));
+            //hologram = HologramsAPI.createHologram((Plugin)DarkAuction.get(), );
+            //hologram.addPage();
+            DecentHologramsAPI.get().getHologramManager().registerHologram(hologram);
+            hologram.enable();
+        }
+    }
+
+
+    @Override
+    public void teleport(Location add) {
+        DecentHologramsAPI.get().getHologramManager().registerHologram(hologram);
+        hologram.enable();
+        loc = add.clone();
+
+        DHAPI.moveHologram(hologram, add);
+        DHAPI.setHologramLines(hologram, strings);
+
+
+    }
+
+    @Override
+    public void clearLines() {
+        strings.clear();
 		/*if(hologram.getPage(0).getLines().size() < 1) return;
 		for(int i=0; i < hologram.getPage(0).getLines().size(); i++) {
 			DHAPI.removeHologramLine(hologram, 0);
 		}*/
-		
-	    
-		
-	}
-	@Override
-	public void appendTextLine(String string) {
-		//DHAPI.addHologramLine(hologram, string);
-		//hologram.showAll();
-		strings.add(string);
-	//hologram.appendTextLine(string);
-		
-	}
+
+
+    }
+
+    @Override
+    public void appendTextLine(String string) {
+        //DHAPI.addHologramLine(hologram, string);
+        //hologram.showAll();
+        strings.add(string);
+        //hologram.appendTextLine(string);
+
+    }
 }

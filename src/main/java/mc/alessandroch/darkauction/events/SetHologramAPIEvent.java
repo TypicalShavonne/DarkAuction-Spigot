@@ -8,18 +8,16 @@ import mc.alessandroch.darkauction.HologramAPI;
 
 
 public class SetHologramAPIEvent extends Event {
-   
-    
+
+
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private HologramAPI holoAPI;
 
-    public SetHologramAPIEvent(){
-        
-        
-       
+    public SetHologramAPIEvent() {
+
+
     }
 
-  
 
     @Override
     public HandlerList getHandlers() {
@@ -35,7 +33,7 @@ public class SetHologramAPIEvent extends Event {
     }
 
     public void setAPI(HologramAPI api) {
-    	holoAPI= api;
+        holoAPI = api;
     }
 }
 

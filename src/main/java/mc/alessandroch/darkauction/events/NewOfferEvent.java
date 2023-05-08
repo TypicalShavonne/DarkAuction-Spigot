@@ -9,12 +9,13 @@ import org.bukkit.event.HandlerList;
 import mc.alessandroch.darkauction.Offer;
 
 public class NewOfferEvent extends Event implements Cancellable {
-    
+
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private boolean isCancelled;
     private final Offer offer;
-    public NewOfferEvent(Offer offer){
-       this.offer = offer;
+
+    public NewOfferEvent(Offer offer) {
+        this.offer = offer;
         this.isCancelled = false;
     }
 
@@ -22,16 +23,20 @@ public class NewOfferEvent extends Event implements Cancellable {
     public boolean isCancelled() {
         return isCancelled;
     }
-     public Offer getOffer() {
-    	 return offer;
-     }
+
+    public Offer getOffer() {
+        return offer;
+    }
+
     @Override
     public void setCancelled(boolean cancelled) {
         this.isCancelled = cancelled;
     }
+
     public Player getPlayer() {
-   	 return Bukkit.getPlayer(offer.playername);
+        return Bukkit.getPlayer(offer.playername);
     }
+
     @Override
     public HandlerList getHandlers() {
         return HANDLERS_LIST;
